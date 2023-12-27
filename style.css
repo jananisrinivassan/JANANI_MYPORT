@@ -1,0 +1,578 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body
+{
+    background: #fdfafa;
+    color: #6e6b6b;
+    
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-color: #F3F3F3;
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    padding: 10px 10%;
+}
+/* nav bar css */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 140px;
+    height: auto;
+    display: block;    
+    
+}
+ 
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: #6b6767;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #FF6000;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;    
+}
+/* text edit */
+.header-text{
+    margin-top: 20%;
+    font-size: 45px;
+    text-align: right center;
+}
+.header-text h1{
+    margin-top: 20px;
+    font-size: 32px;
+}
+.header-text h1 span{
+    color: #FF6000;
+}
+/* image js */
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.about-col-2 {
+    flex: 1;
+    max-width: 100%;
+    height: auto;
+}
+
+.about-col-2 img {
+    max-width: 360px;
+    height: auto;
+    display: block;
+    margin-top: -250px;
+    float: right; /* or use flexbox properties */
+    margin-left: 20px; /* Create space between text and image */
+    border-radius: 50%; /* Create a circular shape */
+    overflow: hidden;
+    animation: rotate 4s linear infinite;
+}
+
+/* animation feature */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ---------about---------- */
+#about{
+    padding: 80px 0;
+    color: #6e6b6b;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100px;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+    max-width: 100%;
+    height: auto;
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .header-text p {
+        font-size: 16px;
+    }
+
+    .header-text h1 {
+        font-size: 28px;
+    }
+
+    .about-col-2 img {
+        max-width: 35%; /* Adjust as needed for smaller screens */
+        margin-top: -31%; /* Example of using a different percentage-based margin */
+        margin-left: 1px; /* Adjust margin for smaller screens */
+    }
+
+    .nav-links{
+        flex-direction: column; /* Stack links vertically on smaller screens */
+        justify-content: center; /* Center links vertically */
+        align-items: center; /* Center links horizontally */
+    }
+
+    .nav-links li {
+        margin: 10px 1; /* Adjust spacing between stacked links */
+    }
+
+    nav {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: center; /* Center elements horizontally */
+    }
+
+    .logo {
+        width: 100px; /* Adjust the size of the logo for smaller screens */
+        margin-bottom: 10px; /* Create space between logo and links */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center links horizontally */
+    }
+
+    nav ul li {
+        margin: 25px 7.5px; /* Adjusting margin for stacked nav items */
+    }
+}
+/* animation for ABOUT ME! */
+/* style.css */
+.abt{
+    padding: 300px;
+    padding-bottom: 100px; /* Add some bottom padding to create space */
+}
+.cursor {
+    animation: blink-caret 0.75s infinite;
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: rgb(75, 69, 69);
+    }
+}
+
+/* paragraph */
+/* Reset default margin and padding */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.sub-title {
+    margin-bottom: 20px;
+}
+
+#about-paragraph {
+    margin-top: 50px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: black;
+}
+
+/* robot next to the paragraph */
+.robot-container {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 20px; /* Adjust as needed */
+}
+
+.robot-gif {
+    width: 350px; /* Adjust dimensions based on your GIF */
+    height: auto; /* Maintain aspect ratio */
+}
+/* scrollbar */
+/* Width */
+::-webkit-scrollbar {
+    width: 10px; /* Adjust the width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #FB8B24; /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #FF6000; /* Color of the scrollbar handle on hover */
+}
+/* Width */
+html {
+    scrollbar-width: thin; /* or auto for default width */
+}
+
+/* Track */
+html {
+    scrollbar-color: #f1f1f1 #888; /* Color of the scrollbar track and handle */
+}
+/* DOWNLOAD MY CV CSS  */
+.download-buttons {
+    display: flex;
+    gap: 20px; /* Adjust the gap between buttons */
+}
+
+.download-btn1 {
+    display: inline-block;
+    padding: 10px 10px;
+    text-decoration: none;
+    background-color: #0084ff;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;   
+
+}
+
+.download-btn2 {
+        display: inline-block;
+        padding: 10px 10px;
+        text-decoration: none;
+        background-color: #ff5100;
+        color: white;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;    
+        align-items: left; 
+}
+
+.download-btn:hover {
+    background-color: #FF4500; /* Change color on hover */
+}
+
+/* Skills Section */
+/* Adjust the padding or margin of the #about section */
+.skills-section {
+    background-color: #F3F3F3;
+    padding: 200px;
+    text-align: center; 
+    margin-top: 50px;/* Center-align the text */
+}
+.skills-section h1 {
+    margin-bottom: 30px;
+    color: #FF6000; /* Change the title color */
+    font-size: 36px; /* Adjust the title font size */
+}
+
+.skills-section h2 {
+    margin-bottom: 30px;
+    color: #333; /* Change the subtitle color */
+    font-size: 24px; /* Adjust the subtitle font size */
+}
+
+/* Skills Progress Bars */
+.skill {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill-title h1{
+    font-size: 30px;
+}
+
+.sub-title h2{
+    font-size: 1px;
+}
+
+.skill-name {
+    text-align: center;
+    margin-bottom: 1px;
+    margin-top: 3px;
+    font-weight: bold;
+    margin: 8px;
+    font-size: 15px;
+}
+
+.skill-bar {    
+    width: 70%;
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    position: relative; 
+
+}
+
+.skill-progress {
+    width: 50px; 
+    height: 100%;
+    background-color: #FF6000;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    transition: width 0.6s ease-in-out;
+    margin-bottom: 100px;
+}
+
+/* Projects Section */
+.projects-section {
+    text-align: center;
+    padding: 100px;
+}
+
+.projects-title{
+    font-size: 35px;
+}
+
+.project-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.project-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: left;
+}
+
+.project {
+    margin: 150px;
+    position: relative;
+    cursor: pointer;
+    flex: 0 0 auto;
+    scroll-snap-align: start; /* Align each project to the start */
+    margin-right: 20px; /* Add some spacing between projects */
+    margin-bottom: 30px; 
+}
+
+.project-image {
+    width: 300px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 5px;
+    position: relative;
+}
+
+.project-details {
+    position: absolute;
+    bottom: -70px; /* Adjust the distance from the image */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black; /* Change color as desired */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    opacity: 0; /* Hide by default */
+    transition: opacity 0.3s ease;
+    width: 80%; /* Adjust the width */
+    color: white; /* Text color */
+}
+
+.project-title {
+    margin-bottom: 10px;
+    color: grey; /* Change text color as needed */
+}
+
+.project:hover .project-details {
+    opacity: 1; /* Show on hover */
+}
+
+/* CSS for Project Info Boxes */
+.project-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.description-paragraph {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Projects Animation Slide */
+.projects-container {
+    display: flex;
+    scroll-snap-type: x mandatory; /* Enable snapping to each project */
+    white-space: nowrap; /* Keep projects in a single row */
+}
+
+.project.active .project-info {
+    display: block; /* Show project info on click */
+}
+
+/* Projects Section Images - Modal CSS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    color: white;
+    font-size: 3em;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+/* Contact Form CSS */
+.contact-section {
+    background-color: #f7f7f7;
+    padding: 50px 0;
+    text-align: left;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.contact-info h2 {
+    margin-bottom: 30px;
+    font-size: 35px; /* Add some margin at the bottom of the title */
+}
+.contact-info {
+    flex: 1;
+    padding-right: 50px;
+    font-size: 1px;
+    font-family: 'Arial', sans-serif; /* Change 'Arial' to your desired font */
+}
+
+.contact-content {
+    flex: 1;
+}
+
+.contact-content form {
+    display: flex;
+    flex-direction: column;
+}
+.contact-info p {
+    /* Additional styling for the contact info paragraphs if needed */
+    font-size: 14px;
+    color: #333; /* Your desired text color */
+    /* Add more styles as per your preference */
+    font-style: thin;
+}
+
+.contact-content input,
+.contact-content textarea,
+.contact-content button {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-content button {
+    background-color: #FF6000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-content button:hover {
+    background-color: #FF4500;
+}
+/* Contacts Icons CSS */
+.social-icons {
+    text-align: center;
+    margin-top: -50px;
+    color: #FF4500; /* Your desired color */
+    margin: 0 15px; /* Adjust margin between icons */
+    font-size: 36px;
+}
+
+.social-icon {
+    color: #FF4500; /* Your desired color */
+    margin: 0 15px; /* Adjust margin between icons */
+    font-size: 36px; /* Adjust icon size */
+}
+/* animation for the icons */
+.social-icons {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.social-icon {
+    color: #FF4500; /* Your desired color */
+    margin: 0 15px; /* Adjust margin between icons */ 
+    font-size: 24px; /* Adjust the font size for the icons */
+}
+
+/* footer CSS */
+.footer-bottom{
+    text-align: center;
+    background-color: #333; /* Change the background color as needed */
+    color: #fff; /* Change text color as needed */
+    padding: 50px;
+    margin-bottom: 5px;
+}
+
