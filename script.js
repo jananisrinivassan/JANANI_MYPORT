@@ -104,3 +104,20 @@ function zoomImage(src) {
 function hideZoomed() {
     document.getElementById("image-zoom-container").style.display = "none";
 }
+
+// For scrolling with href
+document.querySelectorAll('.scroll-link').forEach(link => {
+    link.addEventListener('click', smoothScroll);
+  });
+
+  function smoothScroll(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  }
