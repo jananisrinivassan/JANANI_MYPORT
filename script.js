@@ -62,7 +62,7 @@ projects.forEach(project => {
 
 
 // Clicking each image
-const Projects= document.querySelectorAll('.project');
+const Projects = document.querySelectorAll('.project');
 
 projects.forEach(project => {
     project.addEventListener('click', () => {
@@ -90,3 +90,17 @@ closeModal.addEventListener('click', () => {
 });
 
 
+
+
+
+// Fonction pour afficher l'image zoomée
+function zoomImage(src) {
+    var zoomedImg = document.getElementById("zoomed-image");
+    zoomedImg.src = src;
+    document.getElementById("image-zoom-container").style.display = "block";
+}
+
+// Fonction pour masquer l'image zoomée
+function hideZoomed() {
+    document.getElementById("image-zoom-container").style.display = "none";
+}
