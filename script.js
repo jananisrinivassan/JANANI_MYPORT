@@ -1,13 +1,58 @@
+// Scrolling Animation
+document.addEventListener('DOMContentLoaded', function () {
+    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
+    smoothScrollLinks.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const offsetTop = targetElement.offsetTop;
+                window.scroll({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+});
+
+// scroll animation for icon 
+
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollToTopLink = document.querySelector('.scroll-top-link');
+    scrollToTopLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            const offsetTop = targetElement.offsetTop;
+            window.scroll({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+
+
 // This is for the ABOUT ME Animation 
-function typeWriter(text, i, id) {
-    if (i < text.length) {
+function typeWriter(text, i, id) 
+{
+    if (i < text.length) 
+    {
         document.getElementById(id).innerHTML += text.charAt(i);
         i++;
-        setTimeout(function () {
-            typeWriter(text, i, id);
+        setTimeout(function () 
+        {
+            typeWriter(text, i, id);        
         }, 100); // Adjust the typing speed here (milliseconds)
-    } else {
-        setTimeout(function () {
+    } 
+    else 
+    {
+        setTimeout(function () 
+        {
             document.getElementById(id).innerHTML = ''; // Clear the text after typing is complete
             i = 0;
             typeWriter(text, i, id); // Restart typing
@@ -15,13 +60,13 @@ function typeWriter(text, i, id) {
     }
 }
 
-function startTyping() {
+function startTyping() 
+{
     var title = "About Me";
     var i = 0;
     var id = "about-title"; // Assign an ID to your h1 element, like class="sub-title" id="about-title"
     typeWriter(title, i, id);
 }
-
 window.onload = startTyping;
 
 
@@ -38,86 +83,41 @@ skillBars.forEach(skill => {
     }, 500); // You can adjust the delay as needed
 });
 
+// Get the modal
+var modal = document.getElementById("myModal");
 
+// Get the image and insert it inside the modal
+var modalImg = document.getElementById("modalImg");
+var captionText = document.getElementById("caption");
 
-// For Projects Photo Slide
-const projects = document.querySelectorAll('.project');
-
-// Function to handle project click
-function handleClick(event) {
-    // Remove active class from all projects
-    projects.forEach(project => {
-        project.classList.remove('active');
-    });
-
-    // Add active class to the clicked project
-    const project = event.currentTarget;
-    project.classList.add('active');
+// Function to open the modal with the clicked image
+function openModal(imageSrc, altText) {
+    modal.style.display = "block";
+    modalImg.src = imageSrc;
+    captionText.innerHTML = altText; // You can use alt text or any other text for the caption
 }
 
-// Attach click event listeners to projects
-projects.forEach(project => {
-    project.addEventListener('click', handleClick);
-});
-
-
-// Clicking each image
-const Projects = document.querySelectorAll('.project');
-
-projects.forEach(project => {
-    project.addEventListener('click', () => {
-        // Toggle the display of project details on click
-        const details = project.querySelector('.project-details');
-        details.style.display = details.style.display === 'none' ? 'block' : 'none';
-    });
-});
-
-const project = document.querySelectorAll('.project');
-const modal = document.querySelector('.modal');
-const modalImg = document.querySelector('.modal-content');
-
-projects.forEach(project => {
-    const img = project.querySelector('.project-image');
-    img.addEventListener('click', () => {
-        modal.style.display = 'block';
-        modalImg.src = img.src;
-    });
-});
-
-const closeModal = document.querySelector('.close');
-closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-});
-
-
-
-
-
-// Fonction pour afficher l'image zoomée
-function zoomImage(src) {
-    var zoomedImg = document.getElementById("zoomed-image");
-    zoomedImg.src = src;
-    document.getElementById("image-zoom-container").style.display = "block";
+// Close the modal when the 'x' (close) button is clicked
+var closeBtn = document.getElementsByClassName("close")[0];
+closeBtn.onclick = function() {
+    modal.style.display = "none";
 }
 
-// Fonction pour masquer l'image zoomée
-function hideZoomed() {
-    document.getElementById("image-zoom-container").style.display = "none";
-}
 
-// For scrolling with href
-document.querySelectorAll('.scroll-link').forEach(link => {
-    link.addEventListener('click', smoothScroll);
-  });
+// Contacts Section
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    // Prevent the default form submission
+    event.preventDefault();
 
-  function smoothScroll(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetSection = document.querySelector(targetId);
+    // Perform your form submission to Formspree
+    // This is handled by Formspree itself
 
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  }
+    // Display the success message
+    const successMessage = document.getElementById('success-message');
+    successMessage.style.display = 'block';
+
+    // Hide the success message after 5 seconds (5000 milliseconds)
+    setTimeout(function() {
+        successMessage.style.display = 'none';
+    }, 3000);
+});
